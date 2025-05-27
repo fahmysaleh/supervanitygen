@@ -96,9 +96,3 @@ License
 This software is distributed under the GPLv2 license. Most individual portions
 are placed under compatible MIT or BSD licenses. See each respective file for
 details.
-
-Donations
----------
-If you've found this program useful, please consider sending me a few bits:
-
-`gandalf@winds.org` (via OpenAlias) or `1Ganda1fU65mNxGoXomdtReN3ejkcMHGEL`
