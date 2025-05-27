@@ -8,10 +8,26 @@ Features:
 * Runs under the x86, x86\_64, arm, and arm64 (aarch64) architectures.
 * Includes fast assembly versions of SHA-256 for Intel CPUs with SSSE3, AVX,
   AVX2, and SHA extensions.
+* ✅ Now supports Bloom Filter integration for high-speed address pre-checking.
 
 Limitations:
 * Currently only supports Bitcoin compressed public keys.
 * Does not support combining private keys via addition/multiplication methods.
+
+Bloom Filter Optimization (New)
+-------------------------------
+The latest version includes a **Bloom Filter** to skip unnecessary full address checks and improve performance.
+
+**How it works:**
+- A Bloom Filter is initialized with a list of target Bitcoin addresses or patterns.
+- For each generated candidate, the filter is checked before full validation.
+- If the Bloom Filter says "not possible" → the candidate is skipped immediately.
+- If the filter says "possible match" → full validation is performed.
+
+**Usage:**
+You can add your desired address patterns into the Bloom Filter manually or via CLI (under development). This is especially helpful when scanning for large batches of vanity patterns.
+
+> This feature significantly improves scan speed when searching for multiple target prefixes or full addresses.
 
 Example
 -------
